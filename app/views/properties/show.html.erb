@@ -23,15 +23,15 @@
           <div class="row mt-sm-3 bg-light-p3">
             <div class="col-4">
               <i class="fas fa-bed text-muted ml-0"></i><br>
-              <small><%= @property.rooms %>Bedrooms</small>
+              <small><%= @property.rooms %> Bedrooms</small>
             </div>
             <div class="col-4">
               <i class="fas fa-bath text-muted ml-0"></i><br>
-              <small><%= @property.bathrooms %>Bathrooms</small>
+              <small><%= @property.bathrooms %> Bathrooms</small>
             </div>
             <div class="col-4">
               <i class="fas fa-car text-muted ml-0"></i><br>
-              <small><%= @property.parking_spaces %></small>
+              <small><%= @property.parking_spaces %> Parking</small>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
       <div class="row border-top border-bottom mt-4 mb-4 pt-4 pb-4">
         <div class="col-6">
           <% if @property.for_sale? %>
-            <strong><%= link_to "Est. Monthly Repayments of #{number_to_currency((@property.price - (@property.price * 0.1 ) / 360), precision: 0)} *", class: "text-success" %></strong>
+            <strong><%= link_to "Est. Monthly Repayments of #{number_to_currency((@property.price - (@property.price * 0.1 )) / 36, precision: 0)} *", class: "text-success" %></strong>
           <% else %>
             <strong>Available from <%= @property.available_date.strftime("%a") %>, <%= @property.available_date.day.ordinalize %> <%= @property.available_date.strftime("%B") %> </strong>
           <% end %>
