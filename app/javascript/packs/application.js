@@ -31,7 +31,7 @@ toastr.options = {
 }
 global.toastr = toastr;
 
-import { showDetails, showTelephone, showContactModal } from "./includes/properties";
+import { showDetails, showTelephone, showContactModal, sendMessage } from "./includes/properties";
 
 
 // Internal imports, e.g:
@@ -43,5 +43,5 @@ document.addEventListener('turbolinks:load', () => {
   showDetails();
   showTelephone();
   showContactModal();
-  initAutocomplete();
+  sendMessage();
 });

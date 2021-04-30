@@ -72,6 +72,7 @@ class PropertiesController < ApplicationController
     ContactMailer.email_agent(agent_id, first_name, last_name, email, message).deliver_now
     # response to script
 
+    # logger.debug "agent: #{agent_id}"
     # logger.debug "First name: #{first_name}"
     # logger.debug "Last name: #{last_name}"
     # logger.debug "Email: #{email}"

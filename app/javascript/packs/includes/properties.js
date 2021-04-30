@@ -57,6 +57,6 @@ const sendMessage = () => {
   });
 }
 
-export { showDetails, showTelephone, showContactModal };
+export { showDetails, showTelephone, showContactModal, sendMessage };
 
 
