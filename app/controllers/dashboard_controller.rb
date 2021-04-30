@@ -2,7 +2,6 @@ class DashboardController < ApplicationController
   before_action :set_sidebar
 
   def index
-    @user = User.find(params[:id])
   end
 
   def profile

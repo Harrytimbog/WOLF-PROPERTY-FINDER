@@ -1,0 +1,61 @@
+<%= form_with(model: property, local: true) do |form| %>
+  <%#= render "layouts/validation", item: @property %>
+
+  <div class="form-group mb-2">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-2">
+    <%= form.label :address %>
+    <%= form.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-2">
+    <%= form.label :price, "Total Price (for sale) / Monthly Price (rental) " %>
+    <%= form.number_field :price, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-2">
+    <%= form.label :rooms %>
+    <%= form.number_field :rooms, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-2">
+    <%= form.label :bathrooms %>
+    <%= form.number_field :bathrooms, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-2">
+    <%= form.label :parking_spaces %>
+    <%= form.number_field :parking_spaces, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-2">
+    <%= form.label :for_sale %>
+    <%= form.select :for_sale, options_for_select({ "Yes" => true, "No" => false}, @property.for_sale), class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-2">
+    <%= form.label :available_date %>
+    <%= form.date_field :available_date, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-2">
+    <%= form.label :details %>
+    <%= form.text_area :details, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-2">
+    <%= form.file_field :photo, as: :file, class: "form-control" %>
+  </div>
+
+  <% if @property.photo.present? %>
+    <%= cl_image_tag @property.photo.key, height: 300, width: 400, crop: :fill, class: "m-4" %>
+  <% end %>
+
+
+  <div class="form-group mb-2">
+    <%= form.submit "Save Property", class: "btn btn-success" %>
+  </div>
+<% end %>

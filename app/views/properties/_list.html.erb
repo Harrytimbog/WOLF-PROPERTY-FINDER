@@ -1,0 +1,28 @@
+<% properties.each do |property| %>
+  <div class="col-4">
+    <div class="property border">
+      <div class="property-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path property.photo.key%>')">
+        <%= link_to "", property_path(property) %>
+
+        </div>
+        <div class="property-summary mb-2 p-3">
+          <h5 class="h5"><%= link_to property.name, property_path(property), class: "text-dark" %></h5>
+          <span class="mr-2">
+            <%= property.rooms %>
+            <i class="fas fa-bed text-muted ml-1"></i>
+          </span>
+          <span class="mr-2">
+            <%= property.bathrooms %>
+            <i class="fas fa-bath text-muted ml-1"></i>
+          </span>
+          <span class="mr-2">
+            <%= property.parking_spaces %>
+            <i class="fas fa-car text-muted ml-1"></i>
+          </span>
+          <p class="mt-2"><%= property.address %> </p>
+        </div>
+    </div>
+  </div>
+<% end %>
+
+
