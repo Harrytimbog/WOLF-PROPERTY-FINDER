@@ -3,7 +3,8 @@ class PagesController < ApplicationController
 
   def home
     if user_signed_in?
-      redirect_to dashboard_path, flash: { success: "Successfully signed in. Welcome to Property Finder "} and return
+      path = current_user.admin? ? users_path : dashboard_path
+      redirect_to path, flash: { success: "Successfully signed in. Welcome to Property Finder "} and return
     end
 
     @properties = Property.latest

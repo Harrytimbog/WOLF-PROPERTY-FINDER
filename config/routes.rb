@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'dashboards/index'
-  get 'dashboards/profile'
   devise_for :users
   resources :properties
+
+  get "/users" => 'admin#users', as: :users
 
   get "/dashboard" => 'dashboard#index', as: :dashboard
   get "/profile/:id" => 'dashboard#profile', as: :profile

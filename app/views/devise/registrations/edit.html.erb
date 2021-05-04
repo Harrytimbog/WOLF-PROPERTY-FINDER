@@ -13,6 +13,7 @@
           <%= f.input :last_name, required: true, autofocus: true %>
           <%= f.input :company, required: true, autofocus: true %>
           <%= f.input :telephone, required: true, autofocus: true %>
+          <%= f.input :details, required: true, autofocus: true %>
           <%= f.file_field :avatar, class: "mt-2"%>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
