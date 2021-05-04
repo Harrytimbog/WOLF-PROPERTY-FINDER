@@ -15,6 +15,7 @@
           <%= f.input :telephone, required: true, autofocus: true %>
           <%= f.input :details, required: true, autofocus: true %>
           <%= f.file_field :avatar, class: "mt-2"%>
+          <%= f.file_field :cover_image, class: "mt-2"%>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

@@ -6,9 +6,13 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     @show_sidebar = true if user_signed_in?
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar, :company, :telephone, :first_name, :last_name, :details, :url])
+    devise_parameter_sanitizer.permit(
+      :sign_up, keys: [:avatar, :company, :telephone, :first_name, :last_name, :details, :cover_image, :url]
+    )
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :company, :telephone, :first_name, :last_name, :details, :url])
+    devise_parameter_sanitizer.permit(
+      :account_update, keys: [:avatar, :company, :telephone, :first_name, :last_name, :details, :cover_image, :url]
+    )
   end
 end
