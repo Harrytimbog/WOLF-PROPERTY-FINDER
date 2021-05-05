@@ -1,0 +1,16 @@
+<% posts.each do |post| %>
+  <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
+    <div class="property border">
+      <div class="property-thumb" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path post.image.key%>')">
+        <%= link_to "", post_path(post) %>
+
+        </div>
+        <div class="property-summary mb-2 p-3">
+          <h5 class="h5"><%= link_to post.title, post_path(post), class: "text-dark" %></h5>
+          <p class="mt-2"><%= post.summary %> </p>
+        </div>
+    </div>
+  </div>
+<% end %>
+
+

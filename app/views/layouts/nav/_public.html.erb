@@ -17,28 +17,18 @@
           <a class="nav-link" href="#">Latest</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">News</a>
+          <%= link_to "Blog", blog_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Advertising</a>
         </li>
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
-          </li>
-        <% end %>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <% if user_signed_in? %>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-secondary mr-2 float-sm-right" %>
+      <% else %>
+          <%= link_to "Log In", new_user_session_path, class: "btn btn-secondary mr-2 float-sm-right" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success mr-2 float-sm-right" %>
+      <% end %>
     </div>
   </div>
 </nav>

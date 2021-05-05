@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :properties
 
+  get "/blog" => 'posts#latest', as: :blog
+
   get "/users" => 'admin#users', as: :users
 
   get "/dashboard" => 'dashboard#index', as: :dashboard

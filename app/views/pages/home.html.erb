@@ -1,15 +1,10 @@
-<main class="container">
-
-  <h1>Search for your new home today</h1>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Latest Properties</h1>
-        <p class="lead text-muted">These are some of the properties we have available right now</p>
+<main role="main" class="main-banner" id="home-banner">
+  <section class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Search for your new home today</h1>
+        <p>Choose from many options of beautiful apartments</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          <a href="#" class="btn btn-success">View Latest Properties</a>
         </p>
       </div>
     </div>
@@ -18,7 +13,25 @@
   <section id="latest-properties">
     <div class="container">
       <div class="row">
+        <div class="col">
+          <h3 class="mb-3">Latest Properties</h3>
+        </div>
+      </div>
+      <div class="row">
         <%= render "properties/list", properties: @properties  %>
+      </div>
+    </div>
+  </section>
+
+  <section id="latest-posts">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 class="mb-3">Latest News</h3>
+        </div>
+      </div>
+      <div class="row">
+        <%= render "posts/list", posts: @posts  %>
       </div>
     </div>
   </section>
