@@ -4,11 +4,11 @@
   display: none;
 }
 
-/*
+
 body {
-  padding-top: 80px;
+  padding-top: 50px;
 }
-*/
+
 
 .img-circle {
   border-radius: 50%;
@@ -17,8 +17,16 @@ body {
 #home-banner .jumbotron {
   background: image-url("banners/placeholder.jpg") no-repeat center center;
   background-size: cover;
-  color: #fff;
-  .main-banner h1, p {
+}
+
+#blog-banner .jumbotron {
+  background: image-url("banners/blog.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.main-banner .jumbotron {
+  h1, p {
+    color: #fff;
     text-shadow: 1px 1px 2px #777;
   }
 }

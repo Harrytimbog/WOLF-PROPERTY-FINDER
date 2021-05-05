@@ -1,17 +1,19 @@
-<h2>Users</h2>
-<% @users.each do |user| %>
-  <div class="row">
-    <div class="col-sm-3">
-      <%=  user.full_name %>
+<h3 class="text-center">Users</h3>
+<div class="container">
+  <% @users.each do |user| %>
+    <div class="row">
+      <div class="col-sm-3">
+        <%=  user.full_name %>
+      </div>
+      <div class="col-sm-3">
+        <%=  user.email %>
+      </div>
+      <div class="col-sm-3">
+        <%=  user.created_at.strftime("%d %m %Y") %>
+      </div>
+      <div class="col-sm-3">
+        <%= link_to "View Profile", profile_path(user.id) %>
+      </div>
     </div>
-    <div class="col-sm-3">
-      <%=  user.email %>
-    </div>
-    <div class="col-sm-3">
-      <%=  user.created_at.strftime("%d %m %Y") %>
-    </div>
-    <div class="col-sm-3">
-      <%= link_to "View Profile", profile_path(user.id) %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
