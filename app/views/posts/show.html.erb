@@ -8,7 +8,9 @@
 </main>
 
 <div class="container">
-  <%= post_thumbnail_key(@post) %>
+  <% if @post.image.present? %>
+    <%= post_thumbnail_key(@post) %>
+  <% end %>
   <%= simple_format @post.body %>
   <p><%= link_to "View latest blog posts", blog_path %></p>
 </div>

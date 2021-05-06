@@ -9,7 +9,7 @@
       <%= f.input :summary, class: "form-control" %>
       <%= f.input :body, class: "form-control" %>
       <%= f.input :active, class: "form-control" %>
-      <%= f.file_field :image %>
+      <%= f.file_field :image, class: "mb-2" %>
     </div>
 
     <% if @post.image.present? %>
