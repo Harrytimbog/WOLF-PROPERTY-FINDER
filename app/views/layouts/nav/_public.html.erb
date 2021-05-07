@@ -1,31 +1,33 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="<%= user_signed_in? ? dashboard_path : root_path %> "><%= image_tag "wolf.png", class: "navbar-brand" %></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarCollapse">
-      <div>
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Latest</a>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Blog", blog_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Advertising</a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <% if user_signed_in? %>
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark navbar-lewagon">
+  <a class="navbar-brand" href="<%= user_signed_in? ? dashboard_path : root_path %> "><%= image_tag "wolf.png", class: "navbar-brand" %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="#">Latest</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Blog", blog_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Advertising</a>
+      </li>
+    </ul>
+    <div>
+      <% if user_signed_in? %>
+        <li class="nav-item">
           <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-secondary mr-2 float-sm-right" %>
-        <% else %>
-            <%= link_to "Log In", new_user_session_path, class: "btn btn-secondary mr-2 float-sm-right" %>
-            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success mr-2 float-sm-right" %>
-        <% end %>
-      </div>
+        </li>
+
+      <% else %>
+        <li class="nav-item">
+
+          <%= link_to "Log In", new_user_session_path, class: "btn btn-secondary mr-2 float-sm-right" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success mr-2 float-sm-right" %>
+        </li>
+      <% end %>
     </div>
   </div>
 </nav>
