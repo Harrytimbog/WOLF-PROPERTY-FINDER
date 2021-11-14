@@ -39,6 +39,12 @@ Start Server
 rails s
 ```
 
+## Environmental Variables
+
+### .env
+
+CLOUDINARY_URL
+
 ## Feedback  
 
 Arigbede Timilehin Emmanuel - @Harrytimbog - harriemannie@gmail.com
